@@ -1,0 +1,45 @@
+body {
+  background-color: #f2f0ef;
+  font-family: "Google Sans";
+  margin: 40px;
+}
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  gap: 20px;
+  justify-content: center;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: chocolate;
+  padding: 20px;
+  height: 200px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.author {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
