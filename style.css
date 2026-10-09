@@ -1,7 +1,16 @@
 body {
   background-color: #f2f0ef;
   font-family: "Google Sans";
-  margin: 40px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 40px;
 }
 
 .bookshelf {
@@ -34,7 +43,7 @@ body {
   margin-bottom: 5px;
 }
 
-.actions {
+.book-actions {
   display: flex;
   justify-content: flex-end;
   gap: 5px;
