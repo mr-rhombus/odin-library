@@ -34,9 +34,10 @@ body {
   margin-bottom: 5px;
 }
 
-.btn-container {
+.actions {
   display: flex;
   justify-content: flex-end;
+  gap: 5px;
 }
 
 button {
