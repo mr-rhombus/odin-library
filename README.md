@@ -1,2 +1,4 @@
 # odin-library
-JS Objects practice with a simple library app
+The Odin Project (⚡️) JavaScript Objects practice project ([requirements](https://www.theodinproject.com/lessons/node-path-javascript-library)).
+
+See the live app [here]().
