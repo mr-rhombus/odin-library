@@ -13,6 +13,11 @@ body {
   padding: 40px;
 }
 
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .bookshelf {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
@@ -53,4 +58,20 @@ button {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.add-book {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  color: #f2f0ef;
+  background-color: #2d68c4;
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-book:hover {
+  background-color: #143a78;
 }
