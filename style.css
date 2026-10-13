@@ -75,3 +75,19 @@ button {
 .add-book:hover {
   background-color: #143a78;
 }
+
+.form-wrapper {
+  position: fixed;
+  top: 0;
+  height: 400px;
+  width: 400px;
+}
+
+[popover] {
+  border: none;
+}
+
+[popover]::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
