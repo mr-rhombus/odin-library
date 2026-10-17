@@ -8,6 +8,10 @@ function Book(title, author, pages, hasRead) {
   this.author = author;
   this.pages = pages;
   this.hasRead = hasRead;
+
+  this.toggleHasRead = function () {
+    this.hasRead = !this.hasRead;
+  };
 }
 
 function addBook(title, author, pages, hasRead) {
@@ -45,11 +49,17 @@ function renderBook(book) {
   const actionsDiv = document.createElement("div");
   actionsDiv.classList.add("book-actions");
 
-  const unreadBtn = document.createElement("button");
-  unreadBtn.classList.add("unread");
-  const unreadImg = document.createElement("img");
-  unreadImg.src = "assets/glasses-outline.svg";
-  unreadBtn.appendChild(unreadImg);
+  const hasReadBtn = document.createElement("button");
+  const hasReadImg = document.createElement("img");
+  hasReadImg.src = "assets/glasses-outline.svg";
+  hasReadBtn.appendChild(hasReadImg);
+  if (book.hasRead) {
+    hasReadBtn.classList.add("has-read");
+  }
+  hasReadBtn.addEventListener("click", () => {
+    book.toggleHasRead();
+    hasReadBtn.classList.toggle("has-read");
+  });
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete");
@@ -57,7 +67,7 @@ function renderBook(book) {
   deleteImg.src = "assets/delete-icon.svg";
   deleteBtn.appendChild(deleteImg);
 
-  actionsDiv.appendChild(unreadBtn);
+  actionsDiv.appendChild(hasReadBtn);
   actionsDiv.appendChild(deleteBtn);
 
   bookDiv.appendChild(actionsDiv);
