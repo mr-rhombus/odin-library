@@ -69,6 +69,11 @@ body {
   border: 2px solid #164727;
 }
 
+.delete:hover {
+  background-color: #ffa896;
+  border: 2px solid #9b1313;
+}
+
 button {
   display: flex;
   align-items: center;

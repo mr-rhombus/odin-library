@@ -22,6 +22,7 @@ function renderBook(book) {
   // .book parent div
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
+  bookDiv.dataset.id = book.id;
 
   // .book-data child div
   const bookDataDiv = document.createElement("bookData");
@@ -66,6 +67,11 @@ function renderBook(book) {
   const deleteImg = document.createElement("img");
   deleteImg.src = "assets/delete-icon.svg";
   deleteBtn.appendChild(deleteImg);
+  deleteBtn.addEventListener("click", () => {
+    const bookDiv = document.querySelectorAll(`[data-id="${book.id}"]`);
+    bookDiv.forEach((childDiv) => childDiv.remove()); // Clear from DOM
+    BOOKS.filter((el) => el.id !== book.id); // Remove from global array
+  });
 
   actionsDiv.appendChild(hasReadBtn);
   actionsDiv.appendChild(deleteBtn);
