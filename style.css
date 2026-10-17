@@ -60,7 +60,7 @@ button {
   cursor: pointer;
 }
 
-.add-book {
+.action-btn {
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -72,6 +72,10 @@ button {
   border-radius: 5px;
 }
 
+.action-btn:hover {
+  background-color: #1a4a96;
+}
+
 .add-book:hover {
   background-color: #143a78;
 }
@@ -79,8 +83,12 @@ button {
 .form-wrapper {
   position: fixed;
   top: 0;
-  height: 400px;
-  width: 400px;
+  width: 300px;
+}
+
+dialog {
+  padding: 0px;
+  border-radius: 5px;
 }
 
 [popover] {
@@ -90,4 +98,40 @@ button {
 [popover]::backdrop {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
+}
+
+form {
+  background-color: #f2f0ef;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+form label {
+  font-size: 0.7rem;
+  margin-top: 10px;
+}
+
+form input[type="text"] {
+  padding: 3px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 30px;
+}
+
+form .action-btn {
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  padding: 5px;
 }
