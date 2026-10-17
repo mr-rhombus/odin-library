@@ -42,7 +42,7 @@ function renderBook(book) {
 
   const pagesDiv = document.createElement("div");
   pagesDiv.classList.add("page-ct");
-  pagesDiv.textContent = book.pages;
+  pagesDiv.textContent = book.pages + " pages";
 
   bookDataDiv.appendChild(titleDiv);
   bookDataDiv.appendChild(authorDiv);
