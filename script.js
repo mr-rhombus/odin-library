@@ -72,19 +72,25 @@ function renderBooks() {
 }
 
 // Handle form interaction
+const dialogEl = document.querySelector("dialog");
 
 // Cancel btn
 document.querySelector(".cancel-btn").addEventListener("click", (event) => {
   event.preventDefault();
-  document.querySelector("dialog").hidePopover();
+  dialogEl.hidePopover();
 });
 
 // Submit btn
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
+  const formData = new FormData(event.target);
+  const newBook = Object.fromEntries(formData.entries());
+  addBook(
+    newBook.title,
+    newBook.author,
+    newBook.pageCnt,
+    newBook.hasRead === "true",
+  );
+  renderBooks();
+  dialogEl.hidePopover();
 });
-
-addBook("title1", "author1", "pages1", true);
-addBook("title2", "author2", "pages2", false);
-
-renderBooks();
