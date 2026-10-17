@@ -71,6 +71,19 @@ function renderBooks() {
   });
 }
 
+// Handle form interaction
+
+// Cancel btn
+document.querySelector(".cancel-btn").addEventListener("click", (event) => {
+  event.preventDefault();
+  document.querySelector("dialog").hidePopover();
+});
+
+// Submit btn
+document.querySelector("form").addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
 addBook("title1", "author1", "pages1", true);
 addBook("title2", "author2", "pages2", false);
 

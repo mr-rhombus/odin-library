@@ -124,6 +124,7 @@ form input[type="text"] {
 .btn-container {
   display: flex;
   justify-content: flex-end;
+  gap: 5px;
   width: 100%;
   margin-top: 30px;
 }
@@ -133,5 +134,15 @@ form .action-btn {
   justify-content: center;
   width: 90px;
   height: 40px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.cancel-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #c9c8c7;
 }
