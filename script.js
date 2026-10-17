@@ -25,6 +25,7 @@ function renderBook(book) {
   // .book parent div
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
+  bookDiv.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
   bookDiv.dataset.id = book.id;
 
   // .book-data child div
@@ -126,3 +127,8 @@ newBookForm.addEventListener("submit", (event) => {
   renderBooks();
   dialogEl.hidePopover();
 });
+
+// Random book color
+function getRandomColor() {
+  return Math.floor(Math.random() * 255);
+}
