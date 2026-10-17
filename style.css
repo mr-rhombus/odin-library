@@ -60,6 +60,15 @@ body {
   gap: 5px;
 }
 
+.has-read {
+  background-color: #50c878;
+  border: 2px solid #3cae63;
+}
+
+.has-read:hover {
+  border: 2px solid #164727;
+}
+
 button {
   display: flex;
   align-items: center;
