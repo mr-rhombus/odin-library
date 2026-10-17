@@ -1,5 +1,6 @@
 const BOOKS = [];
 const bookshelf = document.querySelector(".bookshelf");
+const welcomeMsg = document.querySelector(".welcome-header");
 
 function Book(title, author, pages, hasRead) {
   this.id = crypto.randomUUID();
@@ -66,6 +67,11 @@ function renderBook(book) {
 }
 
 function renderBooks() {
+  if (BOOKS) {
+    welcomeMsg.style.display = "none";
+  } else {
+    welcomeMsg.style.display = "flex";
+  }
   BOOKS.forEach((book) => {
     renderBook(book);
   });
