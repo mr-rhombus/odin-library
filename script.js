@@ -8,6 +8,7 @@ function Book(title, author, pages, hasRead) {
   this.author = author;
   this.pages = pages;
   this.hasRead = hasRead;
+  this.displayed = false;
 
   this.toggleHasRead = function () {
     this.hasRead = !this.hasRead;
@@ -19,6 +20,8 @@ function addBook(title, author, pages, hasRead) {
 }
 
 function renderBook(book) {
+  book.displayed = true;
+
   // .book parent div
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
@@ -88,7 +91,7 @@ function renderBooks() {
   } else {
     welcomeMsg.style.display = "flex";
   }
-  BOOKS.forEach((book) => {
+  BOOKS.filter((book) => !book.displayed).forEach((book) => {
     renderBook(book);
   });
 }
@@ -103,8 +106,10 @@ document.querySelector(".cancel-btn").addEventListener("click", (event) => {
 });
 
 // Submit btn
-document.querySelector("form").addEventListener("submit", (event) => {
+const newBookForm = document.querySelector("form");
+newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const formData = new FormData(event.target);
   const newBook = Object.fromEntries(formData.entries());
   addBook(
@@ -113,6 +118,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
     newBook.pageCnt,
     newBook.hasRead === "true",
   );
+
+  newBookForm.reset();
+
   renderBooks();
   dialogEl.hidePopover();
 });
