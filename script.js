@@ -1,4 +1,4 @@
-const BOOKS = [];
+let BOOKS = [];
 const bookshelf = document.querySelector(".bookshelf");
 const welcomeMsg = document.querySelector(".welcome-header");
 
@@ -73,7 +73,11 @@ function renderBook(book) {
   deleteBtn.addEventListener("click", () => {
     const bookDiv = document.querySelectorAll(`[data-id="${book.id}"]`);
     bookDiv.forEach((childDiv) => childDiv.remove()); // Clear from DOM
-    BOOKS.filter((el) => el.id !== book.id); // Remove from global array
+    BOOKS = BOOKS.filter((el) => el.id !== book.id); // Remove from global array
+
+    if (BOOKS.length == 0) {
+      welcomeMsg.style.display = "flex";
+    }
   });
 
   actionsDiv.appendChild(hasReadBtn);
@@ -88,8 +92,6 @@ function renderBook(book) {
 function renderBooks() {
   if (BOOKS) {
     welcomeMsg.style.display = "none";
-  } else {
-    welcomeMsg.style.display = "flex";
   }
   BOOKS.filter((book) => !book.displayed).forEach((book) => {
     renderBook(book);
