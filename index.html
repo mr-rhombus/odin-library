@@ -47,6 +47,13 @@
         <input type="text" name="author" id="author" required />
         <label for="pageCnt">Num. Pages</label>
         <input type="number" name="pageCnt" id="pageCnt" required />
+        <div class="select-wrapper">
+          <label for="hasRead">Have you read this book? </label>
+          <select name="hasRead" id="hasRead">
+            <option value="true">Yes</option>
+            <option value="false" selected>No</option>
+          </select>
+        </div>
         <div class="btn-container">
           <button class="cancel-btn">Cancel</button>
           <button type="submit" class="action-btn">Submit</button>

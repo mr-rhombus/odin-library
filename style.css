@@ -121,6 +121,21 @@ form input[type="text"] {
   padding: 3px;
 }
 
+.select-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-wrapper label {
+  margin: 0;
+}
+
+.select-wrapper select {
+  width: 50px;
+}
+
 .btn-container {
   display: flex;
   justify-content: flex-end;
