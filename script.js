@@ -2,17 +2,17 @@ let BOOKS = [];
 const bookshelf = document.querySelector(".bookshelf");
 const welcomeMsg = document.querySelector(".welcome-header");
 
-function Book(title, author, pages, hasRead) {
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.hasRead = hasRead;
-  this.displayed = false;
+class Book {
+  constructor(title, author, pages, hasRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.hasRead = hasRead;
+  }
 
-  this.toggleHasRead = function () {
+  toggleHasRead() {
     this.hasRead = !this.hasRead;
-  };
+  }
 }
 
 function addBook(title, author, pages, hasRead) {
